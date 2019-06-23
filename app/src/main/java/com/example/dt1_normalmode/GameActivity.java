@@ -2,6 +2,7 @@ package com.example.dt1_normalmode;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -47,7 +48,7 @@ public class GameActivity extends AppCompatActivity {
         if (menuItem.getItemId()== R.id.ga_MenuReset) {
             Intent intent = new Intent(this, GameActivity.class);
             intent.putExtras(bundle);
-            startActivity(intent);
+            startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
             finish();
             return true;
         }
